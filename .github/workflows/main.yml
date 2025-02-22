@@ -21,5 +21,4 @@ jobs:
 
       - name: Run test script
         run: python test_script.py  # Runs a test script to check if 
-everything works
 
