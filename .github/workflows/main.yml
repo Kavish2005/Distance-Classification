@@ -1,0 +1,25 @@
+name: Run Tests  # Name of the GitHub Actions workflow
+
+on: [push]  # Triggers the workflow on every push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Runs the workflow on an Ubuntu server
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3  # Fetches your GitHub repo
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'  # Specifies the Python version
+
+      - name: Install dependencies
+        run: |
+          pip install numpy pandas scikit-learn
+
+      - name: Run test script
+        run: python test_script.py  # Runs a test script to check if 
+everything works
+
